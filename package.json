@@ -1,0 +1,52 @@
+{
+  "name": "ai-web-agency",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Telegram/WhatsApp-native AI web agency — describe an idea, an AI team builds, hosts, and supports the website.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/src/index.js",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "smoke:router": "tsx scripts/smoke-router.ts",
+    "smoke:orchestrator": "tsx scripts/smoke-orchestrator.ts",
+    "smoke:chat": "tsx scripts/smoke-chat.ts",
+    "smoke:forge": "tsx scripts/smoke-forge.ts",
+    "smoke:guardian": "tsx scripts/smoke-guardian.ts",
+    "smoke:edit": "tsx scripts/smoke-edit.ts",
+    "smoke:voice": "tsx scripts/smoke-voice.ts",
+    "smoke:aria": "tsx scripts/smoke-aria.ts",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "jobs:scan": "tsx scripts/jobhunt.ts scan",
+    "jobs:list": "tsx scripts/jobhunt.ts list",
+    "jobs:show": "tsx scripts/jobhunt.ts show",
+    "jobs:approve": "tsx scripts/jobhunt.ts approve",
+    "jobs:send": "tsx scripts/jobhunt.ts send",
+    "jobs:auto": "tsx scripts/jobhunt.ts auto",
+    "jobs:suppress": "tsx scripts/jobhunt.ts suppress",
+    "jobs:status": "tsx scripts/jobhunt.ts status",
+    "jobs:smoke": "tsx scripts/smoke-jobhunt.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
+    "@electric-sql/pglite": "^0.5.4",
+    "@noble/hashes": "^2.2.0",
+    "dotenv": "^16.4.7",
+    "grammy": "^1.45.1",
+    "pg": "^8.22.0",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0",
+    "playwright": "^1.62.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/pg": "^8.20.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
